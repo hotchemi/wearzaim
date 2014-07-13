@@ -1,0 +1,11 @@
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_refresh"
+        android:icon="@drawable/navigation_refresh"
+        android:showAsAction="ifRoom"
+        android:title="@string/navigation_refresh"
+        tools:ignore="AppCompatResource" />
+
+</menu>

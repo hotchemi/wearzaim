@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="label_login_title">Login</string>
+    <string name="welcome">Welcome to WearZaim</string>
+    <string name="description">ZaimのAndroid Wearアプリ(非公式)です。\n\n現在は投稿機能のみを搭載しています。\n\nYou can find the code of WearZaim here:\nhttps://github.com/hotchemi/wearzaim</string>
+    <string name="third">WearZaim made possible by below open sources.\n\nProgressMenuItem:\nhttps://github.com/hotchemi/ProgressMenuItem\n\nscribe-java:\nhttps://github.com/fernandezpablo85/scribe-java\n\notto:\nhttps://github.com/square/otto\n\nSeekArc:\nhttps://github.com/TriggerTrap/SeekArc</string>
+</resources>

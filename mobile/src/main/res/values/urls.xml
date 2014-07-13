@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="payment">https://api.zaim.net/v2/home/money/payment</string>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="message_not_login">Enter amount</string>
+    <string name="message_try_again">Try again</string>
+    <string name="message_success_pay">Success</string>
+    <string name="message_failure_pay">Failure</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WearZaim</string>
+    <string name="label_name">Zaim</string>
+    <string name="no_login_message">You are not logged in.</string>
+</resources>

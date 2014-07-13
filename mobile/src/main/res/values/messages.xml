@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="message_disconnect">You can not connect to the internet,\nPlease try again.</string>
+    <string name="message_logout">Logout success.</string>
+</resources>
