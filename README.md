@@ -1,11 +1,12 @@
 wearzaim
 ========
 
-Zaim Android Wear Client.
+Zaim Android Wear Client(unofficial).
 
 ## ScreenShot 
-![](http://f.st-hatena.com/images/fotolife/h/hotchemi/20140713/20140713165951.png?1405238451)
-![](http://f.st-hatena.com/images/fotolife/h/hotchemi/20140713/20140713165950.png?1405238405)
+![](http://f.st-hatena.com/images/fotolife/h/hotchemi/20140713/20140713232033.png?1405261246)
+![](http://f.st-hatena.com/images/fotolife/h/hotchemi/20140713/20140713232034.png?1405261287)
+![](http://f.st-hatena.com/images/fotolife/h/hotchemi/20140713/20140713232037.png?1405261296)
 
 ## Get it on Google Play
 
@@ -13,7 +14,7 @@ Zaim Android Wear Client.
 
 ## Install
 
-add `mobile/res/values/api_config.xml`.
+GGi clone and add `mobile/res/values/api_config.xml`.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
