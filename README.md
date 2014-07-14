@@ -10,7 +10,7 @@ Zaim Android Wear Client(unofficial).
 
 ## Get it on Google Play
 
-![https://play.google.com/store/apps/details?id=wearable.android.zaim.net](https://dl.dropboxusercontent.com/u/54255753/blog/201402/en_generic_rgb_wo_60.png)
+[![](https://dl.dropboxusercontent.com/u/54255753/blog/201402/en_generic_rgb_wo_60.png)](https://play.google.com/store/apps/details?id=wearable.android.zaim.net)
 
 ## Install
 
