@@ -2,6 +2,7 @@ package wearable.android.zaim.net.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.wearable.view.DismissOverlayView;
 import android.view.GestureDetector;
@@ -11,7 +12,6 @@ import android.widget.TextView;
 
 import com.squareup.otto.Subscribe;
 
-import wearable.android.zaim.net.BuildConfig;
 import wearable.android.zaim.net.R;
 import wearable.android.zaim.net.common.utils.PreferenceUtils;
 import wearable.android.zaim.net.common.utils.ToastUtils;
@@ -31,19 +31,20 @@ public class MainActivity extends Activity implements SeekArc.OnSeekArcChangeLis
 
     private DismissOverlayView mDismissOverlayView;
 
+    private boolean mIsLogin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        boolean isLogin = PreferenceUtils.isLogin(getApplicationContext());
-        if (!BuildConfig.DEBUG && !isLogin) {
+        BusProvider.getInstance().register(this);
+        mIsLogin = PreferenceUtils.isLogin(getApplicationContext());
+        if (!mIsLogin) {
             setContentView(R.layout.activity_main_not_login);
             return;
         }
-
         setContentView(R.layout.activity_main);
         setUpLayout();
         ToastUtils.show(getApplicationContext(), R.string.message_not_login);
-        BusProvider.getInstance().register(this);
     }
 
     @Override
@@ -93,8 +94,12 @@ public class MainActivity extends Activity implements SeekArc.OnSeekArcChangeLis
     }
 
     @Override
-    public boolean dispatchTouchEvent(MotionEvent event) {
-        return mGestureDetector.onTouchEvent(event) || super.dispatchTouchEvent(event);
+    public boolean dispatchTouchEvent(@NonNull MotionEvent event) {
+        if (mIsLogin) {
+            return mGestureDetector.onTouchEvent(event) || super.dispatchTouchEvent(event);
+        } else {
+            return super.dispatchTouchEvent(event);
+        }
     }
 
     private class LongPressListener extends GestureDetector.SimpleOnGestureListener {

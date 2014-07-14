@@ -31,8 +31,8 @@ public class SendLoginStatusService extends IntentService {
 
     public static Intent createIntent(Context context, boolean login) {
         Intent intent = new Intent(context, SendLoginStatusService.class);
-        intent.putExtra(KEY_LOGIN, login);
-        return new Intent(context, SendLoginStatusService.class);
+        intent.putExtra(KEY_LOGIN, String.valueOf(login));
+        return intent;
     }
 
     @Override
@@ -46,7 +46,7 @@ public class SendLoginStatusService extends IntentService {
             Log.e(TAG, "Failed to connect to GoogleApiClient.");
             return;
         }
-        String login = String.valueOf(intent.getBooleanExtra(KEY_LOGIN, false));
+        String login = intent.getStringExtra(KEY_LOGIN);
         Wearable.MessageApi.sendMessage(googleApiClient,
                 REQUEST_PATH, RESET_PATH, Base64Utils.encode(login));
     }
