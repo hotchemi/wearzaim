@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.view.GestureDetectorCompat;
+import android.support.wearable.activity.ConfirmationActivity;
 import android.support.wearable.view.DismissOverlayView;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -37,6 +38,7 @@ public class MainActivity extends Activity implements SeekArc.OnSeekArcChangeLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         BusProvider.getInstance().register(this);
+
         mIsLogin = PreferenceUtils.isLogin(getApplicationContext());
         if (!mIsLogin) {
             setContentView(R.layout.activity_main_not_login);
@@ -44,7 +46,6 @@ public class MainActivity extends Activity implements SeekArc.OnSeekArcChangeLis
         }
         setContentView(R.layout.activity_main);
         setUpLayout();
-        ToastUtils.show(getApplicationContext(), R.string.message_not_login);
     }
 
     @Override
@@ -74,13 +75,15 @@ public class MainActivity extends Activity implements SeekArc.OnSeekArcChangeLis
 
     @Subscribe
     public void onSuccessPayment(SuccessPaymentEvent event) {
-        startActivity(IntentHelper.createConfirmationSuccessIntent(this, R.string.message_success_pay));
+        startActivity(IntentHelper.createConfirmationIntent(this, R.string.message_success_pay,
+                ConfirmationActivity.SUCCESS_ANIMATION));
         finish();
     }
 
     @Subscribe
     public void onFailurePayment(FailurePaymentEvent event) {
-        startActivity(IntentHelper.createConfirmationFailureIntent(this, R.string.message_failure_pay));
+        startActivity(IntentHelper.createConfirmationIntent(this, R.string.message_failure_pay,
+                ConfirmationActivity.FAILURE_ANIMATION));
         ToastUtils.show(this, R.string.message_try_again);
     }
 
