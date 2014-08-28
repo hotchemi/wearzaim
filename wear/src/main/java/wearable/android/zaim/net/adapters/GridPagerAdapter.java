@@ -4,24 +4,26 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 
 import wearable.android.zaim.net.fragments.InputAmountFragment;
+import wearable.android.zaim.net.fragments.SelectCategoryFragment;
+import wearable.android.zaim.net.fragments.SelectPaymentFragment;
 
 public class GridPagerAdapter extends android.support.wearable.view.FragmentGridPagerAdapter {
 
-    public GridPagerAdapter(final FragmentManager fm) {
+    public GridPagerAdapter(FragmentManager fm) {
         super(fm);
     }
 
     @Override
-    public Fragment getFragment(final int row, final int column) {
+    public Fragment getFragment(int row, int column) {
         switch (row) {
+            case 0:
+                return InputAmountFragment.newInstance();
             case 1:
-                return InputAmountFragment.newInstance();
+                return SelectCategoryFragment.newInstance();
             case 2:
-                return InputAmountFragment.newInstance();
-            case 3:
-                return InputAmountFragment.newInstance();
+                return SelectPaymentFragment.newInstance();
             default:
-                return InputAmountFragment.newInstance();
+                return null;
         }
     }
 
@@ -31,7 +33,7 @@ public class GridPagerAdapter extends android.support.wearable.view.FragmentGrid
     }
 
     @Override
-    public int getColumnCount(final int row) {
+    public int getColumnCount(int row) {
         return 1;
     }
 
