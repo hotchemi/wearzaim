@@ -28,6 +28,10 @@ public final class PreferenceUtils {
         return getDefaultPreferences(context).getBoolean(KEY_LOGIN, false);
     }
 
+    public static boolean isNotLogin(Context context) {
+        return !isLogin(context);
+    }
+
     public static void saveAccessToken(Context context, String token, String secret) {
         SharedPreferences.Editor editor = getDefaultEditor(context);
         editor.putString(KEY_TOKEN, token);
